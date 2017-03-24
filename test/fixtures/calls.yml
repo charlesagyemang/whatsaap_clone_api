@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  caller_name: MyString
+  caller_picture: MyString
+  call_type_icon: false
+  date: MyString
+  number_of_calls: 1
+  time_of_call: MyString
+
+two:
+  caller_name: MyString
+  caller_picture: MyString
+  call_type_icon: false
+  date: MyString
+  number_of_calls: 1
+  time_of_call: MyString
