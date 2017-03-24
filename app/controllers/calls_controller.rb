@@ -5,12 +5,17 @@ class CallsController < ApplicationController
   def index
     @calls = Call.all
 
-    render json: @calls
+    #render json: @calls
+    render_pretty_json(@calls)
   end
 
   # GET /calls/1
   def show
-    render json: @call
+    #render json: @call
+
+
+    #Render Pretty json
+    render_pretty_json(@call)
   end
 
   # POST /calls
@@ -27,7 +32,7 @@ class CallsController < ApplicationController
   # PATCH/PUT /calls/1
   def update
     if @call.update(call_params)
-      render json: @call
+      render_pretty_json(@call)
     else
       render json: @call.errors, status: :unprocessable_entity
     end
@@ -49,4 +54,8 @@ class CallsController < ApplicationController
       params.require(:call).permit(:caller_name, :caller_picture, :call_type_icon, :date, :number_of_calls, :time_of_call)
     end
 
+    #function to render pretter json
+    def render_pretty_json(params)
+      render json: JSON.pretty_generate(params.as_json)
+    end
 end
