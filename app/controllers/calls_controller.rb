@@ -48,4 +48,5 @@ class CallsController < ApplicationController
     def call_params
       params.require(:call).permit(:caller_name, :caller_picture, :call_type_icon, :date, :number_of_calls, :time_of_call)
     end
+
 end
